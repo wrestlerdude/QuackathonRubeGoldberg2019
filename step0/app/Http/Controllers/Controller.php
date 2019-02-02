@@ -18,7 +18,9 @@ class Controller extends BaseController
 
         $message = $request->message;
 
-        $reversed = strrev($message);
+
+        $encoded = base64_encode($message);
+
 
         $client = new Client(
             env("TUMBLR_CONSUMER"),
@@ -32,7 +34,7 @@ class Controller extends BaseController
 
         $post = [
             "type" => "text",
-            "title" => base64_encode($reversed),
+            "title" => strrev($encoded),
         ];
 
         $client->createPost(env("TUMBLR_URL"), $post);
