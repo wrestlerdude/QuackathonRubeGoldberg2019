@@ -1,46 +1,34 @@
 #include "CImg/CImg.h"
-#include <iostream>
-#define _USE_MATH_DEFINES
 #include <cmath>
-#include <vector>
-#include <tuple>
+#include <cstdlib>
 
 using namespace std;
 using namespace cimg_library;
 
-void fractal_tree(CImg<unsigned char> &image, int order, double theta, double height, int px, int py, double angle)
+typedef pair<int,int> pos;
+
+void pattern(CImg<unsigned char> &image, double seed)
 {
-	double trunk_r = 0.29;
-	double trunk = height * trunk_r;
-	double dx = trunk * cos(angle);
-	double dy = trunk * sin(angle);
-	double newx = px + dy;
-	double newy = py + dy;
+	srand(time(NULL));
+	for (int i = 0; i < image.width(); i++)
+		for (int j = 0; j < image.height(); j++)
+		{ 
 
-	static const unsigned char colors[3] = {0xff};
-	image.draw_line(px, py, newx, newy, colors);
-
-	if (order > 0)
-	{
-		double new_height = height * (1 - trunk_r);
-		fractal_tree(image, order-1, theta, new_height, newx, newy, heading - theta);
-		fractal_tree(image, order-1, theta, new_height, newx, newy, heading + theta);
-	}
+			double x = i*seed/image.width();
+			double y = j*seed/image.height();
+			int c = (int)trunc(x*x + y*y);
+			if (c % 2 == 0)
+				image(i, j, 0) = 0xff;
+			if (c % 3 == 0)
+				image(i, j , 1) = 0xff;
+		}
 }
 
 void render_fractal(int seed, int width, int height)
 {
-
 	CImg<unsigned char> image(width, height, 1, 3, 0);
-	CImgDisplay display(image, "Tree Fractal");
-	
-	
-	double theta = 0;
+	CImgDisplay display(image, "Fractal");
+	pattern(image, (double)seed);
 	while (!display.is_closed())
-	{
-		theta += 0.1;
-
-		fractal_tree(image, theta, height * 0.9, width / 2, -(M_PI / 2));
 		image.display(display);
-	}
 }

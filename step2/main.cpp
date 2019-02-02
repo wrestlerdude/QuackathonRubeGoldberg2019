@@ -25,8 +25,8 @@ int main()
 		seed += c;
 
 	cout << seed << endl;
-	
-	render_fractal(seed, 640, 480);
+
+	render_fractal(seed, 1280, 720);
 
     return 0;
 }
