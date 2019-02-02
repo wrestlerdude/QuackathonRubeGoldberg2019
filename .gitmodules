@@ -1,0 +1,6 @@
+[submodule "step2/cpp-base64"]
+	path = step2/cpp-base64
+	url = https://github.com/ReneNyffenegger/cpp-base64.git
+[submodule "step2/CImg"]
+	path = step2/CImg
+	url = https://github.com/dtschump/CImg.git
