@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <cstdio>
 #include <cstdint>
 #include "cpp-base64/base64.h"
 #include "fractal.h"
@@ -26,18 +25,8 @@ int main()
 		seed += c;
 
 	cout << seed << endl;
-	CImg<unsigned char> image(640, 480, 1, 3, 0);
-	unsigned char colors[3];
-
-	colors[0] = 0xff;
-	colors[1] = 0;
-	colors[2] = 0;
-	CImgDisplay display(image, "Window");
-	image.draw_line(0, 0, 100, 100, colors);
-	while (!display.is_closed())
-	{
-		image.display(display);
-	}
+	
+	render_fractal(seed, 640, 480);
 
     return 0;
 }
