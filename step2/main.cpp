@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <cstdint>
+#include <fstream>
 #include "cpp-base64/base64.h"
 #include "fractal.h"
 #include "CImg/CImg.h"
@@ -17,16 +18,38 @@ int main()
 	getline(cin, encoded);
 	string decoded = base64_decode(encoded);
 	reverse(decoded.begin(), decoded.end());
-	cout << decoded << "\n";
+	cout << "Decoded: " + decoded << endl;
 
 	size_t seed = 0;
 
 	for(auto &c : decoded)
 		seed += c;
 
-	cout << seed << endl;
+	cout << "Seed: " << seed << endl;
 
+	//word split in half, swapped, and encoded in b64
+	int length = decoded.length();
+	string output1 = decoded.substr(0, (length/2));
+	string output, output2;
+	if (decoded.length() & 1)
+	{
+		output2 = decoded.substr((length/2)+1, length-1);
+		output = output2 + decoded.at(length/2) + output1;
+	}
+	else
+	{
+		output2 = decoded.substr(length/2, length-1);
+		output = output2 + output1;
+	}
+
+	ofstream file("output.txt");
+	if (file.is_open())
+	{
+		file << "output" + '\n';
+		file.close();
+	}
+	else cout << "Unable to open the file." << endl;
+    
 	render_fractal(seed, 1280, 720);
-
     return 0;
 }
