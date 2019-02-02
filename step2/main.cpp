@@ -42,14 +42,21 @@ int main()
 		output = output2 + output1;
 	}
 
+	output = base64_encode(reinterpret_cast<const unsigned char*>(output.c_str()), output.length());
+
 	ofstream file("output.txt");
-	if (file.is_open())
+	if (file)
 	{
-		file << "output" + '\n';
+		file << output << endl;
 		file.close();
+		cout << "Output written to file!" << endl;
 	}
-	else cout << "Unable to open the file." << endl;
-    
-	render_fractal(seed, 1280, 720);
+	else 
+	{
+		cout << "Unable to open the file." << endl;
+    	return 1;
+    }
+
+	render_fractal(seed, 1280, 720, output);
     return 0;
 }

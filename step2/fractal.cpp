@@ -1,11 +1,10 @@
 #include "CImg/CImg.h"
 #include <cmath>
 #include <cstdlib>
+#include <string>
 
-using namespace std;
 using namespace cimg_library;
-
-typedef pair<int,int> pos;
+using namespace std;
 
 void pattern(CImg<unsigned char> &image, double seed)
 {
@@ -26,11 +25,16 @@ void pattern(CImg<unsigned char> &image, double seed)
 		}
 }
 
-void render_fractal(int seed, int width, int height)
+void render_fractal(int seed, int width, int height, string output)
 {
 	CImg<unsigned char> image(width, height, 1, 3, 0);
 	CImgDisplay display(image, "Fractal");
 	pattern(image, (double)seed);
+
+	unsigned char black[3] = {0};
+	unsigned char white[3] = {255};
+
+	image.draw_text(15, 670, output.c_str(), white, black, 1, 40);
 	while(!display.is_closed())
 		image.display(display);
 }
