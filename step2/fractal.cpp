@@ -1,4 +1,6 @@
-#include <CImg/CImg.h>
+#include "CImg/CImg.h"
+#include <iostream>
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <vector>
 #include <tuple>
@@ -6,47 +8,39 @@
 using namespace std;
 using namespace cimg_library;
 
-vector<tuple<int, int, int, int>> fractal_tree(int &i, int &ox, int &oy, int &t, int &r, double &theta, double &dtheta)
+void fractal_tree(CImg<unsigned char> &image, int order, double theta, double height, int px, int py, double angle)
 {
-	if (i == 0)
-		return {};
-	int x0 = ox;
-	int y0 = oy;
-	int x = x0 + (t * cos(theta));
-	int y = y0 + (t * sin(theta));
+	double trunk_r = 0.29;
+	double trunk = height * trunk_r;
+	double dx = trunk * cos(angle);
+	double dy = trunk * sin(angle);
+	double newx = px + dy;
+	double newy = py + dy;
 
-	vector<tuple<int, int, int, int>> lines;
-	vector<tuple<int, int, int, int>> lineA;
-	vector<tuple<int, int, int, int>> lineB;
-	lines.push_back(make_tuple(x0, y0, x, y));
-	lineA = fractal_tree(i-1, x, y, t * r, r, theta + dtheta, dtheta);
-	lines.insert(lines.end(), lineA.begin(), lineA.end());
-	lineB = fractal_tree(i-1, x, y, t * r, theta - dtheta, dtheta);
-	lines.insert(lines.end(), lineB.begin(), lineB.end());
+	static const unsigned char colors[3] = {0xff};
+	image.draw_line(px, py, newx, newy, colors);
 
-	return lines;
+	if (order > 0)
+	{
+		double new_height = height * (1 - trunk_r);
+		fractal_tree(image, order-1, theta, new_height, newx, newy, heading - theta);
+		fractal_tree(image, order-1, theta, new_height, newx, newy, heading + theta);
+	}
 }
 
 void render_fractal(int seed, int width, int height)
 {
-	seedf = (double)seed;
-	while (seedf >= 1.0)
-		seedf /= 10.0;
-	double seedt = seed % ((120 + 1 - 80) + 80);
-	vector<tuple<int, int, int, int>> tree_lines = fractal_tree(16, width/2, 0, seedt, seedf, 1.579708, 1.0472);
 
 	CImg<unsigned char> image(width, height, 1, 3, 0);
-	unsigned char colors[3];
-	colors[0] = 0xff;
-	colors[1] = 0xff;
-	colors[2] = 0xff;
-
 	CImgDisplay display(image, "Tree Fractal");
-
-	for(auto &v : tree_lines)
-		image.draw_line(get<0>(v), get<1>(v), get<2>(v), get<3>(v), colors);
-
+	
+	
+	double theta = 0;
 	while (!display.is_closed())
-		image.display(display);
+	{
+		theta += 0.1;
 
+		fractal_tree(image, theta, height * 0.9, width / 2, -(M_PI / 2));
+		image.display(display);
+	}
 }
