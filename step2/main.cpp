@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <fstream>
 #include "cpp-base64/base64.h"
-#include "fractal.h"
+#include "pattern.h"
 #include "CImg/CImg.h"
 
 using namespace std;

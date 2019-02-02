@@ -1,5 +1,5 @@
 CC = g++
-CCFLAGS = -o main.exe main.cpp cpp-base64/base64.cpp fractal.cpp -O2
+CCFLAGS = -o main.exe main.cpp cpp-base64/base64.cpp pattern.cpp -O2
 
 ifeq ($(OS),Windows_NT)
 	CCFLAGS += -lgdi32
