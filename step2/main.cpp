@@ -6,6 +6,7 @@
 #include "cpp-base64/base64.h"
 #include "fractal.h"
 #include "CImg/CImg.h"
+#include "fractal.h"
 
 using namespace std;
 using namespace cimg_library;
@@ -32,7 +33,7 @@ int main()
 	colors[1] = 0;
 	colors[2] = 0;
 	CImgDisplay display(image, "Window");
-//	image.draw_line(0, 0, 100, 100, colors);
+	image.draw_line(0, 0, 100, 100, colors);
 	while (!display.is_closed())
 	{
 		image.display(display);
