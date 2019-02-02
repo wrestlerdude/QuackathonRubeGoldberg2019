@@ -2,6 +2,7 @@ import time
 import random
 from random import randint
 import choices as chSelector
+import base64
 
 print("\n"*30)
 print("########################################")
@@ -14,7 +15,7 @@ chSelector.slowType("Everyone seems to have a jolly good time. The labs are fill
 #time.sleep(1)
 chSelector.slowType("...")
 #time.sleep(1)
-chSelector.slowType("But there is someting that is bugging you...it's hard to tell what")
+chSelector.slowType("But there is something that is bugging you...it's hard to tell what")
 #time.sleep(1)
 chSelector.slowType("As the night settles in, the organisers keep stressing how important it is to not go through corridor 2A.")
 chSelector.slowType("You feel like they are hiding something.\n")
@@ -60,7 +61,12 @@ while alive:
     time.sleep(3)
     chSelector.slowType("     What a despicable place. Too late to go back now, my true work begins...")
     chSelector.slowType("     But don't you worry about that, here, have your next 'clue', for whatever good that will do you...")
-    print("ta da")
+    code = code.encode('utf-8')
+    data = base64.b64encode(code)
+    data = base64.b32encode(data)
+    data = base64.b64encode(data)
+
+    print("%s" % data.decode())
 
 
 

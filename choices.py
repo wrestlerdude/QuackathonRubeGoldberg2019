@@ -1,12 +1,13 @@
 import morse as morse
 import sys
 import time
+import re
 
 def slowType(text):
     for c in text + '\n':
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        #time.sleep(0.05)
 def morseInput():
     goodChoice = False
     while not goodChoice:
@@ -40,7 +41,7 @@ def roomExplore():
         if c in {"quit","exit"}:
             print("You wish.")
             break
-        elif c in {"look around", "look", "explore"}:
+        elif re.match(r"^(look|explore) ?(around)?$", c):
             slowType("The room is dark, the only light source seems to be the old computer screen sitting on a desk and the pale moonlight coming through a window in front of you. You can hear some crows in the distance.")
             slowType("Your friends are all tired from the other decoding done and would really want to go home and rest.")
             slowType("There seems to be some some server racks in the back of the room, as well as an empty vending machine.")
