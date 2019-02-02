@@ -6,7 +6,6 @@
 #include "cpp-base64/base64.h"
 #include "fractal.h"
 #include "CImg/CImg.h"
-#include "fractal.h"
 
 using namespace std;
 using namespace cimg_library;
@@ -18,7 +17,6 @@ int main()
 	getline(cin, encoded);
 	string decoded = base64_decode(encoded);
 	reverse(decoded.begin(), decoded.end());
-	cout << "Decoded: " + decoded << endl;
 
 	size_t seed = 0;
 
@@ -57,6 +55,6 @@ int main()
     	return 1;
     }
 
-	render_fractal(seed, 1280, 720, output);
+	render_pattern(seed, 1280, 720, output);
     return 0;
 }

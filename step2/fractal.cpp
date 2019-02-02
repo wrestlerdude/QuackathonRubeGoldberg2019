@@ -25,10 +25,10 @@ void pattern(CImg<unsigned char> &image, double seed)
 		}
 }
 
-void render_fractal(int seed, int width, int height, string output)
+void render_pattern(int seed, int width, int height, string output)
 {
 	CImg<unsigned char> image(width, height, 1, 3, 0);
-	CImgDisplay display(image, "Fractal");
+	CImgDisplay display(image, "Pattern");
 	pattern(image, (double)seed);
 
 	unsigned char black[3] = {0};
