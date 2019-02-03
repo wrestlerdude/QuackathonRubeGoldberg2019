@@ -21,7 +21,6 @@ Route::post('/qr', function(\Illuminate\Http\Request $request) {
     $base32 = new Tuupola\Base32;
 
     $decoded = base64_decode($base32->decode(base64_decode($raw)));
-
     $message = $base32->encode(strrev($decoded));
 
     return view('qr', compact('message'));
