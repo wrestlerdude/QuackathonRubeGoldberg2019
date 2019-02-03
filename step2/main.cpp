@@ -24,37 +24,27 @@ int main()
 		seed += c;
 
 	cout << "Seed: " << seed << endl;
-
+	#ifdef DEBUG
+	cout << "Decoded: " << decoded << endl;
+	#endif
 	//word split in half, swapped, and encoded in b64
-	int length = decoded.length();
-	string output1 = decoded.substr(0, (length/2));
-	string output, output2;
-	if (decoded.length() & 1)
-	{
-		output2 = decoded.substr((length/2)+1, length-1);
-		output = output2 + decoded.at(length/2) + output1;
-	}
-	else
-	{
-		output2 = decoded.substr(length/2, length-1);
-		output = output2 + output1;
-	}
+	decoded = base64_encode(reinterpret_cast<const unsigned char*>(decoded.c_str()), decoded.length());
+	decoded = base64_encode(reinterpret_cast<const unsigned char*>(decoded.c_str()), decoded.length());
 
-	output = base64_encode(reinterpret_cast<const unsigned char*>(output.c_str()), output.length());
+	#ifdef DEBUG
+    cout << "Output: " + decoded << endl;
+    #endif
 
 	ofstream file("output.txt");
 	if (file)
 	{
-		file << output << endl;
+		file << decoded << endl;
 		file.close();
 		cout << "Output written to file!" << endl;
 	}
 	else 
-	{
 		cout << "Unable to open the file." << endl;
-    	return 1;
-    }
 
-	render_pattern(seed, 1280, 720, output);
+	render_pattern(seed, 1280, 720, decoded);
     return 0;
 }

@@ -7,6 +7,8 @@ else
 	CCFLAGS += -L/usr/X11R6/lib -lm -lpthread -lX11
 endif
 
+debug:
+	$(CC) $(CCFLAGS) -D DEBUG
 build:
 	$(CC) $(CCFLAGS)
 clean:
