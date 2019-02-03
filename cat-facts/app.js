@@ -55,7 +55,8 @@ app.get('/encode', (req, res) => {
 // post method for encode page
 app.post('/encode', (req, res) => {
 
-    decoded = base64.decode(base64.decode(base64.decode(req.body.encoded)));
+    decoded = base64.decode(base64.decode(req.body.encoded));
+    console.log(decoded);
     encoded = base64.encode(rot13(decoded));
 
     res.render('encode', {
