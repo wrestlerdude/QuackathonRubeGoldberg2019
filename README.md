@@ -2,6 +2,9 @@
 An utterly useless, but stupidly complex programatically made Rube Goldberg machine for the 2019 Quackathon.
 
 ## Build:
+### Calculator, dotgame, tumblr, qr
+All laravel projects. Just use `php artisan serve` from the directories
+
 ### Step 2: 
 Requires GCC. Only works on Windows + Linux.
 <br />Once cloned make sure to run 
@@ -11,3 +14,7 @@ Requires GCC. Only works on Windows + Linux.
 `make build`<br />
 `./main.exe`
 
+### Step 6:
+Requires Python 3. That's about it.<br />
+Just run 'python3 start.py' and enjoy the fireworks
+ 
