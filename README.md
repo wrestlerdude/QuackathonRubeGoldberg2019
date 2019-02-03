@@ -14,6 +14,18 @@ Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X1
 `make build`<br />
 `./main.exe`
 
+### Step 3:
+Requires Node.js dependencies to be installed first
+`npm install --save express pug body-parser js-base64`
+
+Uses Bootstrap 4.2.1 and jQuery 3.3.1
+`yarn add bootstrap jquery`
+
+Run using
+`npm start`
+or
+`nodemon`
+
 ### Step 6:
 Requires Python 3. That's about it.<br />
 Just run 'python3 start.py' and enjoy the fireworks
