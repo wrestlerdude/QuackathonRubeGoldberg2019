@@ -36,10 +36,6 @@ Run using
 ```
 npm start
 ```
-or
-```
-nodemon
-```
 
 ### Step 6:
 Requires Python 3. That's about it.<br />
