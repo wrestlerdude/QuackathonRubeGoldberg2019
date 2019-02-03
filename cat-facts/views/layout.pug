@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title Napier Computing Society
+        link(rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css')
+    body
+        nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+            a.navbar-brand(href='/') Napier Computing Society
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            
+            #navbarsExampleDefault.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item
+                        a.nav-link(href='/') Home
+                    li.nav-item
+                        a.nav-link(href='/cat-fact') Cat Facts
+                    li.nav-item
+                        a.nav-link(href='https://www.youtube.com/watch?v=dQw4w9WgXcQ') Encoder
+
+        .container
+            br
+            block content
+            br
+            hr
+            footer
+                p Copyright &copy; 2019
+
+        script(src='/jquery/dist/jquery.js')
+        script(src='/bootstrap/dist/js/bootstrap.min.js')
+        script(src='/js/custom.js')

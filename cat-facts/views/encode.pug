@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .jumbotron
+        h1= title
+        p Provide your encoded string here and we'll give you an even better encoded string. 
+
+        form(method='POST', action='/encode')
+            #form-group
+                label Encoded String
+                input.form-control(name='encoded', type='text' required)
+
+            br
+
+            #form-group
+                label Password
+                input.form-control(name='password', type='password' required)
+
+            br
+            input.btn.btn-primary(type='submit', value='Submit', id='encode-submit')
+            | &nbsp;
+            a.btn.btn-success(type='submit', id='cat-facts', href='/cat-fact' style='color:#fff;')
+                | Show me more cat facts
+
+          
+
+        
+
+        br
+        br
+
+        if correct
+            br
+            h6= encoded
+        else if correct == false
+            .alert.alert-danger(role='alert', id='passwd-error')
+                | Password was incorrect! Please read a cat fact and try again
+            
+        
+        
