@@ -6,7 +6,7 @@ An utterly useless, but stupidly complex programatically made Rube Goldberg mach
 All laravel projects. Just use `php artisan serve` from the directories
 
 ### Step 2: 
-Requires GCC. Only works on Windows + Linux.
+Requires GCC. Works on Windows + Linux + MacOS.
 <br />Once cloned make sure to run 
 `git submodule update --init --recursive` to get the appropiate libraries.
 <br />Then run<br />
