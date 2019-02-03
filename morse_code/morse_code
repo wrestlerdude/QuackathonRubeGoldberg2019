@@ -1,5 +1,14 @@
 import base64
+import smtplib
 
+server = smtplib.SMTP('smtp.gmail.com', 587)
+
+server.ehlo()
+
+server.starttls()
+
+#Next, log in to the server
+server.login("hashdevauto@gmail.com", "Miguel2000")
 
 def to_morse_code(text):
     code = {' ': '|', 'a': '. ', 'b': ' . . .', 'c': '_ . _ .', 'd': '_ . .', 'e': '.', 'f': '. . _ .',
@@ -15,8 +24,9 @@ def to_morse_code(text):
 
     return morse_code
 
+buffer = open("demofile.txt", "r")
+text64 = buffer.read()
 
-text64 = input("Enter the code you want to decrypt: ")
 # print(to_morse_code(text))
 text64 += "=" * ((4 - len(text64) % 4) % 4)
 text64 = base64.standard_b64decode(text64).decode("utf-8")
@@ -37,5 +47,8 @@ for i in range(len(rot13)):
         decryp_text += chr(temp)
 
 print("The Decrypted message is ", decryp_text)
+morse = ("The morse code is: %s ",to_morse_code(decryp_text))
+#server.sendmail['Subject'] = "SUBJECT OF THE MAIL"
+server.sendmail("hashdevauto@gmail.com", "myonchev99@gmail.com", str(morse))
 print("In Morse Code", to_morse_code(decryp_text))
-
+# server.sendmail("hashdevauto@gmail.com", "myonchev99@gmail.com", ". . .. ._ .|. __ __ __. . . .__ . __ . ._ | ._ _ .._.. .")
