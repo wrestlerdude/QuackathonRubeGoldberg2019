@@ -45,10 +45,16 @@ for i in range(len(rot13)):
         decryp_text += chr(temp)
     else:
         decryp_text += chr(temp)
+msg = """From: hashdevauto@gmail.com
+To: myonchev99@gmail.com\n
+Subject: <Quackaton message>\n
+Hello!\Your morse code message here :
+""" + to_morse_code(decryp_text)
 
-print("The Decrypted message is ", decryp_text)
+# print("The Decrypted message is ", decryp_text)
 morse = ("The morse code is: %s ",to_morse_code(decryp_text))
 #server.sendmail['Subject'] = "SUBJECT OF THE MAIL"
-server.sendmail("hashdevauto@gmail.com", "myonchev99@gmail.com", str(morse))
-print("In Morse Code", to_morse_code(decryp_text))
-# server.sendmail("hashdevauto@gmail.com", "myonchev99@gmail.com", ". . .. ._ .|. __ __ __. . . .__ . __ . ._ | ._ _ .._.. .")
+
+server.sendmail("hashdevauto@gmail.com", "myonchev99@gmail.com", msg)
+server.sendmail("hashdevauto@gmail.com", "ovidiu.andrey97@gmail.com", msg)
+# print("In Morse Code", to_morse_code(decryp_text))
