@@ -17,7 +17,7 @@ Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X1
 ### Step 3:
 Requires Node.js dependencies to be installed first
 ```
-npm install --save express pug body-parser js-base64
+npm install --save express pug body-parser js-base64 request
 ```
 
 Uses Bootstrap 4.2.1 and jQuery 3.3.1
