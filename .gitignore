@@ -2,3 +2,4 @@
 *.exe
 *.jpg
 *.txt
+__pycache__/
