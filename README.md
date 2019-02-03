@@ -24,7 +24,7 @@ make build
 ### Step 3:
 Requires Node.js dependencies to be installed first
 ```
-npm install --save express pug body-parser js-base64 request
+npm install --save express pug body-parser js-base64 request morse-node
 ```
 
 Uses Bootstrap 4.2.1 and jQuery 3.3.1
