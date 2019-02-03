@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    ul.list-group
+            each fact, i in facts
+                li.list-group-item
+                    span= fact.fact
+    
+    br
+    
+    .checkbox
+        label
+            input(type='checkbox', id="inlineCheckbox", checked=false) 
+            | &nbsp;I have read the cat fact
+
+    br
+    pre.d-none(id='passwd-disp') password is #{passwd}
+
+    input.btn.btn-primary(type='submit', value='Get password', id='get-passwd')
+
+    span &nbsp;
+
+    input.btn.btn-danger.disabled(type='submit', value='Take me to encoder', id="encoder-btn", onclick='')
+
+    span &nbsp;
+
+    input.btn.btn-success(type='submit', value='Show me another cat fact' onclick='location.href="/cat-fact"')

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    .jumbotron
+        h1.display-2= title
+        p What do cats and Base64 encoding have in common? Absolutely nothing.
+        img(src="images/cats.png", alt="")
+
+    input.btn.btn-primary.btn-lg(type='submit', value='Show me a cat fact', onclick='location.href="/cat-fact"')
+    

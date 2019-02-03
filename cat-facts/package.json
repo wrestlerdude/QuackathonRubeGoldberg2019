@@ -1,0 +1,20 @@
+{
+  "name": "quack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Toby Cook",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "js-base64": "^2.5.1",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  }
+}
