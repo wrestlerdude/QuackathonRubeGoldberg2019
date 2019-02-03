@@ -47,14 +47,14 @@ and enjoy the fireworks
 
 
 #### order:
-tumblr
-shebang
-dot game
-picture
-cat facts
-VR
-text adventure
-QR
-blockchain
-calculator
+tumblr<br />
+(Step X)shebang<br />
+dot game<br />
+step2<br />
+cat facts<br />
+VR<br />
+step6<br />
+QR<br />
+(Step X)blockchain<br />
+calculator<br />
  
