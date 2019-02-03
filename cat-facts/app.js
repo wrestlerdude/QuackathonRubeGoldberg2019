@@ -3,6 +3,7 @@ const path = require('path');
 const base64 = require('js-base64').Base64;
 const bodyParser = require('body-parser');
 const request = require('request');
+const morse = require('morse-node').create();
 
 const app = express();
 
@@ -57,7 +58,8 @@ app.post('/encode', (req, res) => {
 
     decoded = base64.decode(base64.decode(req.body.encoded));
     console.log(decoded);
-    encoded = base64.encode(rot13(decoded));
+    encoded = morse.encode(decoded);
+    //encoded = base64.encode(rot13(decoded));
 
     res.render('encode', {
         title: 'Encoded String to Better Encoded String',
