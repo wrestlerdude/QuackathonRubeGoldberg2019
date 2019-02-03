@@ -1,6 +1,6 @@
 # QuackathonRubeGoldberg2019
 An utterly useless, but stupidly complex programatically made Rube Goldberg machine for the 2019 Quackathon.
-
+FYI, the step numbers are misleading, the actual order is at the bottom of this file.
 ## Build:
 ### Calculator, dotgame, tumblr, qr
 All laravel projects. Just use `php artisan serve` from the directories
