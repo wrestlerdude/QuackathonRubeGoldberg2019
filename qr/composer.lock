@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "9049a428268e05c902e090c89eb00663",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3053,6 +3053,58 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "tuupola/base32",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tuupola/base32.git",
+                "reference": "d70ab06ce7ac8cb33c739075a80e66d908ece0da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tuupola/base32/zipball/d70ab06ce7ac8cb33c739075a80e66d908ece0da",
+                "reference": "d70ab06ce7ac8cb33c739075a80e66d908ece0da",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^0.2.1",
+                "paragonie/random_compat": "^2.0",
+                "phpbench/phpbench": "^0.13.0",
+                "phpunit/phpunit": "^4.8 || ^5.5 || ^6.5",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-gmp": "It can let string encoding progress be fast."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tuupola\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mika Tuupola",
+                    "email": "tuupola@appelsiini.net",
+                    "homepage": "http://www.appelsiini.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base32 encoder and decoder for arbitrary data",
+            "homepage": "https://github.com/tuupola/base32",
+            "keywords": [
+                "base32"
+            ],
+            "time": "2018-04-13T11:39:44+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
