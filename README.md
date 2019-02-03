@@ -6,7 +6,7 @@ An utterly useless, but stupidly complex programatically made Rube Goldberg mach
 All laravel projects. Just use `php artisan serve` from the directories
 
 ### Step 2: 
-Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X11 installed, [https://www.xquartz.org/)] , although the graphical output won't work only the .txt.
+Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X11 installed, https://www.xquartz.org , although the graphical output won't work only the .txt.
 <br />Get the required libraries by running
 ```
 git submodule update --init --recursive
