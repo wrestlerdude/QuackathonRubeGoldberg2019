@@ -14,3 +14,7 @@ Requires GCC. Only works on Windows + Linux.
 `make build`<br />
 `./main.exe`
 
+### Step 6:
+Requires Python 3. That's about it.<br />
+Just run 'python3 start.py' and enjoy the fireworks
+ 
