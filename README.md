@@ -7,12 +7,19 @@ All laravel projects. Just use `php artisan serve` from the directories
 
 ### Step 2: 
 Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X11 installed, [https://www.xquartz.org/)] , although the graphical output won't work only the .txt.
-<br />Once cloned make sure to run 
-`git submodule update --init --recursive` to get the appropiate libraries.
-<br />Then run<br />
-`cd step2`<br />
-`make build`<br />
-`./main.exe`
+<br />Get the required libraries by running
+```
+git submodule update --init --recursive
+``` 
+```
+cd step2
+```
+```
+make build
+```
+```
+./main.exe
+```
 
 ### Step 3:
 Requires Node.js dependencies to be installed first
@@ -36,7 +43,11 @@ nodemon
 
 ### Step 6:
 Requires Python 3. That's about it.<br />
-Just run 'python3 start.py' and enjoy the fireworks
+Just run 
+```
+python3 start.py
+```
+and enjoy the fireworks
 
 
 #### order:
