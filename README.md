@@ -17,4 +17,17 @@ Requires GCC. Works on Windows + Linux + MacOS. If on MacOS make sure to have X1
 ### Step 6:
 Requires Python 3. That's about it.<br />
 Just run 'python3 start.py' and enjoy the fireworks
+
+
+#### order:
+tumblr
+shebang
+dot game
+picture
+cat facts
+VR
+text adventure
+QR
+blockchain
+calculator
  
