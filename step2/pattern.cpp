@@ -8,7 +8,6 @@ using namespace std;
 
 void pattern(CImg<unsigned char> &image, double seed)
 {
-	srand(time(NULL));
 	for (int i = 0; i < image.width(); i++)
 		for (int j = 0; j < image.height(); j++)
 		{ 
