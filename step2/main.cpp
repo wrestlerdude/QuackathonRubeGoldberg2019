@@ -32,8 +32,8 @@ int main()
 	decoded = base64_encode(reinterpret_cast<const unsigned char*>(decoded.c_str()), decoded.length());
 
 	#ifdef DEBUG
-    cout << "Output: " + decoded << endl;
-    #endif
+    	cout << "Output: " + decoded << endl;
+    	#endif
 
 	ofstream file("output.txt");
 	if (file)
